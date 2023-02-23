@@ -14,3 +14,10 @@ C:\Users\chase\OneDrive\Documents\Source\Repos\mis221\labs\mis221-snowmanlab-Cha
 C:\Users\chase\OneDrive\Documents\Source\Repos\mis221\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\ref\mis221-snowmanlab-chasecallahan37.dll
 C:\Users\chase\OneDrive\Documents\Source\Repos\mis221\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.pdb
 C:\Users\chase\OneDrive\Documents\Source\Repos\mis221\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.genruntimeconfig.cache
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.csproj.AssemblyReference.cache
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.AssemblyInfoInputs.cache
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.AssemblyInfo.cs
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.csproj.CoreCompileInputs.cache
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.dll
+C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net5.0\mis221-snowmanlab-chasecallahan37.pdb

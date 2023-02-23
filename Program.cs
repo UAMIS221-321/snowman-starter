@@ -1,13 +1,11 @@
 ﻿using System;
-using System.IO;
 
-namespace mis221_snowmanlab_chasecallahan37
+namespace snowmanlab
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Clear();
             int gamesWon = 0;
             int gamesLost = 0;
 
@@ -53,13 +51,6 @@ namespace mis221_snowmanlab_chasecallahan37
             entered 1, 2 or 3 and return false if they entered anything else.
             */
 
-            bool returnTrue = true;     //Will return true unless proved wrong
-            if(!(userInput == "1" || userInput == "2" || userInput == "3"))
-            {
-                returnTrue = false;
-            }
-
-            return returnTrue;
 
         }
 
@@ -68,15 +59,6 @@ namespace mis221_snowmanlab_chasecallahan37
             /*Step 2: Update to call Snowman if the user entered 1 and 
              * ScoreBoard if they entered 2
              */
-            if(userInput == "1")
-            {
-                SnowMan(ref gamesWon, ref gamesLost);
-            }
-            else if(userInput == "2")
-            {
-                ScoreBoard(gamesWon, gamesLost);
-            }
-             
 
 
 
@@ -88,7 +70,6 @@ namespace mis221_snowmanlab_chasecallahan37
             string word = GetRandomWord();
             char[] displayWord = SetDisplayWord(word);
             int missed = 0;
-            int numberOfTurns = 0;      //Keeps track of the number of rounds that havae occured
             string guessed = "No Letters Guessed Yet";
 
             while (KeepGoing(displayWord, missed))
@@ -96,8 +77,7 @@ namespace mis221_snowmanlab_chasecallahan37
                 ShowBoard(displayWord, missed, guessed);
                 Console.WriteLine();
                 char pickedLetter = Console.ReadLine().ToUpper()[0];
-                CheckChoice(displayWord, word, ref missed, ref guessed, pickedLetter, numberOfTurns);
-                numberOfTurns++;
+                CheckChoice(displayWord, word, ref missed, ref guessed, pickedLetter);
             }
 
             if (missed == 7)
@@ -115,7 +95,7 @@ namespace mis221_snowmanlab_chasecallahan37
         }
 
         public static void CheckChoice(char[] displayWord, string word, ref int missed,
-                                       ref string guessed, char pickedLetter, int numberOfTurns)
+                                       ref string guessed, char pickedLetter)
         {
             /*Update Check choice.  It should check to see if the letter picked is in the 
              * word.  If it is, it should updated the guessed array (remember to handle 
@@ -124,39 +104,6 @@ namespace mis221_snowmanlab_chasecallahan37
              * found, to press a key to continue.  Update the guessed letters array 
              * and clear the console. 
              */
-            bool foundLetter = false;       //used to determine if the letter was found in the word
-
-            if(numberOfTurns == 0)  //if this is the first time through, set guessed equal to nothing
-            {
-                guessed = $"{pickedLetter}";
-            }
-            else    //if not the first time through, then do this
-            {
-                guessed += $", {pickedLetter}";
-            }
-
-             for(int u = 0; u < word.Length; u++)
-             {
-                 if(pickedLetter == word[u])
-                 {
-                     displayWord[u] = word[u];
-                     foundLetter = true;
-                 }
-             }
-             if(foundLetter)
-             {
-                 System.Console.WriteLine($"The letter '{pickedLetter}' was found!");
-                 System.Console.WriteLine("\n... Press any key to continue.");
-                 Console.ReadKey();
-                 Console.Clear();
-             }
-             if(!foundLetter)
-             {
-                 System.Console.WriteLine($"The letter '{pickedLetter}' was not found.");
-                 System.Console.WriteLine("\n... Press any key to continue.");
-                 Console.ReadKey();
-                 Console.Clear();
-             }
 
 
         }
@@ -167,20 +114,6 @@ namespace mis221_snowmanlab_chasecallahan37
              * AND there are still underscores left meaning they have not 
              * fully guessed the word
              */
-
-             bool continueGames = false;       //assume that it is false that the game will continue. work to prove that it is true
-             int size = displayWord.Length;       //Set length of array equal to size
-             for(int u = 0; u < size; u++)
-             {
-                if(missed < 7 && displayWord[u] == '_')
-                {
-                    return true;
-                }
-             }
-
-             return continueGames;
-              
-
 
 
 
@@ -206,16 +139,6 @@ namespace mis221_snowmanlab_chasecallahan37
             /*SetDisplayWord to return a character array of 
             * underscores to match the word returned in step 3
             */
-            int size = word.Length;
-            char[] underScores = new char[size];
-            
-            for(int i = 0; i < size; i++)
-            {
-                underScores[i] = '_';
-            }
-
-            return underScores;
-            
 
 
 
@@ -227,42 +150,16 @@ namespace mis221_snowmanlab_chasecallahan37
             you can assume this number can change depending
             on the words in the file
             */
-
-            string[] words = new string[6];     //Store array here and pass by ref below, so that count can be returned
-            int count = GetAllWords(words);
-
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(0, 6);
-
-            return words[randomNumber];
+            GetAllWords();
 
 
 
         }
 
-        static int GetAllWords(string[] words)
+        static int GetAllWords()
         {
             //Get all the words from a file and store them in an array, returns the amount of words their our
             int count = 0;
-
-            //Open file
-           StreamReader inFile = new StreamReader("words.txt");
-
-           //Process file
-           
-           string line = inFile.ReadLine();     //Priming read
-           while(line != null)
-           {
-               words[count] = line;
-               count++;
-               line = inFile.ReadLine();        //Update read
-           }
-
-           //close the file
-           inFile.Close();
-
-           return count;
-
 
 
 
