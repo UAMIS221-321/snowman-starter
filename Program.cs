@@ -50,7 +50,20 @@ namespace snowmanlab
             /*Step 1 update ValidMenuChoice to return true if the user 
             entered 1, 2 or 3 and return false if they entered anything else.
             */
-
+            switch(userInput){
+                case "1":
+                    return true;
+                    break;
+                case "2":
+                    return true;
+                    break;
+                case "3":
+                    return true;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
 
         }
 
@@ -59,6 +72,17 @@ namespace snowmanlab
             /*Step 2: Update to call Snowman if the user entered 1 and 
              * ScoreBoard if they entered 2
              */
+
+             switch(userInput){
+                case "1":
+                    SnowMan(ref gamesWon, ref gamesLost);
+                    break;
+                case "2":
+                    ScoreBoard(gamesWon, gamesLost);
+                    break;
+                default:
+                    break;
+            }
 
 
 
@@ -70,7 +94,7 @@ namespace snowmanlab
             string word = GetRandomWord();
             char[] displayWord = SetDisplayWord(word);
             int missed = 0;
-            string guessed = "No Letters Guessed Yet";
+            string guessed = "Letters guessed: ";
 
             while (KeepGoing(displayWord, missed))
             {
@@ -104,8 +128,20 @@ namespace snowmanlab
              * found, to press a key to continue.  Update the guessed letters array 
              * and clear the console. 
              */
-
-
+            int length = word.Length;
+            guessed += pickedLetter;
+            bool correct = false;
+            for (int i = 0; i < length; i++){
+                if(word[i] == pickedLetter){
+                    displayWord[i] = pickedLetter;
+                    correct = true;
+                }
+            }
+            if(!correct){
+                System.Console.WriteLine("\nThe letter was not found!");
+                missed++;
+            }
+            Console.Clear();
         }
 
         public static bool KeepGoing(char[] displayWord, int missed)
@@ -114,9 +150,20 @@ namespace snowmanlab
              * AND there are still underscores left meaning they have not 
              * fully guessed the word
              */
+            if(missed < 7 && CheckUnderScore(displayWord)){
+                return true;
+            }
+            return false;
 
+        }
 
-
+        public static bool CheckUnderScore(char[] displayWord){
+            for (int i = 0; i < displayWord.Length; i++){
+                if(displayWord[i] == '_'){
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static void ShowBoard(char[] displayWord, int missed, string guessed)
@@ -139,8 +186,12 @@ namespace snowmanlab
             /*SetDisplayWord to return a character array of 
             * underscores to match the word returned in step 3
             */
-
-
+            int length = word.Length;
+            char[] wordChar = new char[length];
+            for (int i = 0; i < length; i++){
+                wordChar[i] = '_';
+            }
+            return wordChar;
 
         }
         public static string GetRandomWord()
@@ -149,18 +200,19 @@ namespace snowmanlab
             Note: The number generator should only generate a number within the range of the amount words in the file, 
             you can assume this number can change depending
             on the words in the file
-            */
-            GetAllWords();
-
+            */    
+            string[] allWords = GetAllWords();
+            int randy = new Random().Next(0, 3);
+            return allWords[randy];
 
 
         }
 
-        static int GetAllWords()
+        static string[] GetAllWords()
         {
             //Get all the words from a file and store them in an array, returns the amount of words their our
             int count = 0;
-
+            return new string[]{"CAPSTONE", "WINCHESTER", "BRUNO"};
 
 
         }
