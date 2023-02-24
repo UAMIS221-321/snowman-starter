@@ -201,6 +201,7 @@ static char[] SetDisplayWord(string word)
 /*SetDisplayWord to return a character array of 
 * underscores to match the word returned in step 3
 */
+
     int length = word.Length;
     char[] wordChar = new char[length];
     for (int i = 0; i < length; i++){
