@@ -1,4 +1,8 @@
-﻿using System;
+// Snowman_Starter
+ 
+using System;
+
+//Start main 
 
 int gamesWon = 0;
 int gamesLost = 0;
@@ -12,9 +16,9 @@ while (userInput != "3")
 
 Goodbye(gamesWon, gamesLost);
 
+// End main
 
-static string GetMenuChoice()
-{
+static string GetMenuChoice(){
     DisplayMenu();
     string userInput = Console.ReadLine();
 
@@ -31,61 +35,47 @@ static string GetMenuChoice()
     return userInput;
 }
 
-static void DisplayMenu()
-{
+static void DisplayMenu(){
     Console.Clear();
     Console.WriteLine("1:   Play Snowman");
     Console.WriteLine("2:   See Scoreboard");
     Console.WriteLine("3:   Exit Game");
 }
 
-static bool ValidMenuChoice(string userInput)
-{
+static bool ValidMenuChoice(string userInput){
     /*Step 1 update ValidMenuChoice to return true if the user 
     entered 1, 2 or 3 and return false if they entered anything else.
     */
-    switch(userInput){
-        case "1":
-            return true;
-            break;
-        case "2":
-            return true;
-            break;
-        case "3":
-            return true;
-            break;
-        default:
-            return false;
-            break;
-    }
+	if(userInput == "1" || userInput == "2" || userInput == "3"){
+		return true;
+	}
+	else{
+		return false;
+	}
 
 }
 
-static void Route(string userInput, ref int gamesWon, ref int gamesLost)
-{
-/*Step 2: Update to call Snowman if the user entered 1 and 
-* ScoreBoard if they entered 2
-*/
+static void Route(string userInput, ref int gamesWon, ref int gamesLost){
+    /*Step 2: Update to call Snowman if the user entered 1 and 
+        * ScoreBoard if they entered 2
+        */
+	if(userInput == "1"){
+		SnowMan(ref gamesWon, ref gamesLost);
+	}
+	else if(userInput == "2"){
+		ScoreBoard(gamesWon, gamesLost);
+	}
 
-    switch(userInput){
-    case "1":
-        SnowMan(ref gamesWon, ref gamesLost);
-        break;
-    case "2":
-        ScoreBoard(gamesWon, gamesLost);
-        break;
-    default:
-        break;
-    }
+
+
 }
 
-static void SnowMan(ref int gamesWon, ref int gamesLost)
-{
+static void SnowMan(ref int gamesWon, ref int gamesLost){
     Console.Clear();
     string word = GetRandomWord();
     char[] displayWord = SetDisplayWord(word);
     int missed = 0;
-    string guessed = "Letters guessed: ";
+    string guessed = "";
 
     while (KeepGoing(displayWord, missed))
     {
@@ -105,84 +95,64 @@ static void SnowMan(ref int gamesWon, ref int gamesLost)
         Console.WriteLine("You Won!");
         gamesWon++;
     }
-        Console.WriteLine("Press any key to continue.....");
-        Console.ReadKey();
+    Console.WriteLine("Press any key to continue.....");
+    Console.ReadKey();
 }
 
-static void CheckChoice(char[] displayWord, string word, ref int missed,
-            ref string guessed, char pickedLetter)
-{
-/*Update Check choice.  It should check to see if the letter picked is in the 
-* word.  If it is, it should updated the guessed array (remember to handle 
-* the situation where it is the first letter picked) and clear the 
-* console.  If it is not, it should tell the user the letter was not 
-* found, to press a key to continue.  Update the guessed letters array 
-* and clear the console. 
-*/
+static void CheckChoice(char[] displayWord, string word, ref int missed, ref string guessed, char pickedLetter){
+    /*Check choice should check to see if the letter picked is in the 
+        * word.  If it is, it should update the guessed array. and clear the 
+        * console.  If it is not, it should tell the user the letter was not 
+        * found, to press a key to continue, update the guessed letters array 
+        * and clear the console. 
+        */
 
-//If the user has already guessed a letter, then dont continue
-    if(AlreadyGuessed(guessed, pickedLetter)){
-        System.Console.WriteLine("You have already guessed " + pickedLetter);
-    } else{
-        guessed += pickedLetter;
-        bool correct = false;
+	bool found = false;
+	guessed+= pickedLetter;
 
-    //Searches over the word looking to see if the picked letter was found inside
-        for (int i = 0; i < displayWord.Length; i++){
-            if(word[i] == pickedLetter){
-                displayWord[i] = pickedLetter;
-                correct = true;
-            }
-        }
+	for(int i = 0; i < word.Length; i++){
+		if(word[i] == pickedLetter){
+			displayWord[i] = word[i];
+			found = true;
+		}
+	}
+	if(found == false){
+		missed++;
+		System.Console.WriteLine("LETTER " + pickedLetter + " WAS NOT FOUND");
+	}
+	
+	System.Console.WriteLine(displayWord);
+	System.Console.WriteLine("Press any key to continue.");
+	Console.ReadKey();
+	Console.Clear();
 
-        //Checks to see if they got it correct or not
-        if(!correct){
-            System.Console.WriteLine("\nThe letter was not found!");
-            missed++;
-        }
-
-    }
-    Pause();
-}
-//Takes the letters that have been guessed and the most recent guess.
-//Then searches to see if the picked letter has been found.
-
-static bool AlreadyGuessed(string guessed, char pickedLetter){
-    bool found = false;
-
-    for (int i = 0; i < guessed.Length; i++){
-        if(guessed[i] == pickedLetter){
-            found = true;
-        }
-    }
-
-    return found;
-}
-
-static bool KeepGoing(char[] displayWord, int missed)
-{
-/*Update to return true if they have missed less than 7 guesses 
-* AND there are still underscores left meaning they have not 
-* fully guessed the word
-*/
-    if(missed < 7 && CheckUnderScore(displayWord)){
-        return true;
-    }
-    return false;
 
 }
 
-static bool CheckUnderScore(char[] displayWord){
-    for (int i = 0; i < displayWord.Length; i++){
-        if(displayWord[i] == '_'){
-        return true;
-        }
-    }
-    return false;
+static bool KeepGoing(char[] displayWord, int missed){
+    /*Update to return true if they have missed less than 7 guesses 
+        * AND there are still underscores left meaning they have not 
+        * fully guessed the word
+        */
+
+	bool flag = false;
+
+	for(int i = 0; i < displayWord.Length; i++){
+		if(displayWord[i] == '_'){
+			flag = true;
+		}
+	}
+
+	if(missed < 7 && flag == true){
+		return true;
+	}
+
+	return false;
+
+
 }
 
-static void ShowBoard(char[] displayWord, int missed, string guessed)
-{
+static void ShowBoard(char[] displayWord, int missed, string guessed){
     Console.WriteLine("Word to guess: ");
     for (int i = 0; i < displayWord.Length; i++)
     {
@@ -196,46 +166,28 @@ static void ShowBoard(char[] displayWord, int missed, string guessed)
 
 }
 
-static char[] SetDisplayWord(string word)
-{
-/*SetDisplayWord to return a character array of 
-* underscores to match the word returned in step 3
-*/
-
-    int length = word.Length;
-    char[] wordChar = new char[length];
-    for (int i = 0; i < length; i++){
-        wordChar[i] = '_';
-    }
-    return wordChar;
-
+static char[] SetDisplayWord(string word){
+    /*SetDisplayWord to return a character array of 
+    * underscores to match the word returned in step 3
+    */
+	char[] NEWarray = new char[word.Length];
+	for(int i = 0; i < word.Length; i++){
+		NEWarray[i] = '_';
+	}
+	return NEWarray;
 }
-static string GetRandomWord()
-{
-/* Gets all words from a file, then returns a random word in the array to be used in the game
-Note: The number generator should only generate a number within the range of the amount words in the file, 
-you can assume this number can change depending
-on the words in the file
-*/    
-    string[] allWords = GetAllWords();
-    int randy = new Random().Next(0, 3);
-    return allWords[randy];
+static string GetRandomWord(){
+    // Selects a random word from the array below and returns it.
 
 
-}
+    Random roll = new Random();
+    string[] snowmanWords = new string[] { "ROLLTIDE", "ALABAMA", "INNOVATE", "INFORMATION", "CAPSTONE", "SNOWMAN" };
 
-static string[] GetAllWords()
-{
-//Get all the words from a file and store them in an array, returns the amount of words their our
-    int count = 0;
-    return new string[]{"CAPSTONE", "WINCHESTER", "BRUNO"};
-
-
+	return snowmanWords[roll.Next(0,5)];
 }
 
 
-static void ScoreBoard(int gamesWon, int gamesLost)
-{
+static void ScoreBoard(int gamesWon, int gamesLost){
     Console.Clear();
     Console.WriteLine("You have won " + gamesWon + " games");
     Console.WriteLine("You have lost " + gamesLost + " games");
@@ -243,20 +195,11 @@ static void ScoreBoard(int gamesWon, int gamesLost)
     Console.ReadKey();
 }
 
-static void Goodbye(int gamesWon, int gamesLost)
-{
+static void Goodbye(int gamesWon, int gamesLost){
     Console.Clear();
     Console.WriteLine("Thank you for playing... \n" +
-    "Press any key for one final look at the scoreboard" +
-    " before you go");
+        "Press any key for one final look at the scoreboard" +
+        " before you go");
     Console.ReadKey();
     ScoreBoard(gamesWon, gamesLost);
-
-}
-
-
-static void Pause(){
-    Console.WriteLine("\nPress any key to continue");
-    Console.ReadKey();
-    Console.Clear();
 }
