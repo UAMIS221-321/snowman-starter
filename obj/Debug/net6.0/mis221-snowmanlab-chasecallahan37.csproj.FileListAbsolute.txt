@@ -13,3 +13,18 @@ C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221
 C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.pdb
 C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.genruntimeconfig.cache
 C:\Users\chase\OneDrive\Documents\Projects\Professional\TA\Spring_23\labs\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\ref\mis221-snowmanlab-chasecallahan37.dll
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\bin\Debug\net6.0\mis221-snowmanlab-chasecallahan37.exe
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\bin\Debug\net6.0\mis221-snowmanlab-chasecallahan37.deps.json
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\bin\Debug\net6.0\mis221-snowmanlab-chasecallahan37.runtimeconfig.json
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\bin\Debug\net6.0\mis221-snowmanlab-chasecallahan37.dll
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\bin\Debug\net6.0\mis221-snowmanlab-chasecallahan37.pdb
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.csproj.AssemblyReference.cache
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.AssemblyInfoInputs.cache
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.AssemblyInfo.cs
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.csproj.CoreCompileInputs.cache
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.dll
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\refint\mis221-snowmanlab-chasecallahan37.dll
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.pdb
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\mis221-snowmanlab-chasecallahan37.genruntimeconfig.cache
+C:\Users\Stanley Mk II\Desktop\TA 221\Fall 2023\Repos\snowmanLab\mis221-snowmanlab-ChaseCallahan37\obj\Debug\net6.0\ref\mis221-snowmanlab-chasecallahan37.dll

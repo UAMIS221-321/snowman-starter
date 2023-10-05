@@ -76,12 +76,18 @@ static void SnowMan(ref int gamesWon, ref int gamesLost){
     char[] displayWord = SetDisplayWord(word);
     int missed = 0;
     string guessed = "";
+    char pickedLetter = '?';
 
     while (KeepGoing(displayWord, missed))
     {
         ShowBoard(displayWord, missed, guessed);
         Console.WriteLine();
-        char pickedLetter = Console.ReadLine().ToUpper()[0];
+        try{
+            pickedLetter = Console.ReadLine().ToUpper()[0];
+        }
+        catch{
+            pickedLetter = '?';
+        }
         CheckChoice(displayWord, word, ref missed, ref guessed, pickedLetter);
     }
 
