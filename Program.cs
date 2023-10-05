@@ -46,12 +46,6 @@ static bool ValidMenuChoice(string userInput){
     /*Step 1 update ValidMenuChoice to return true if the user 
     entered 1, 2 or 3 and return false if they entered anything else.
     */
-	if(userInput == "1" || userInput == "2" || userInput == "3"){
-		return true;
-	}
-	else{
-		return false;
-	}
 
 }
 
@@ -59,14 +53,6 @@ static void Route(string userInput, ref int gamesWon, ref int gamesLost){
     /*Step 2: Update to call Snowman if the user entered 1 and 
         * ScoreBoard if they entered 2
         */
-	if(userInput == "1"){
-		SnowMan(ref gamesWon, ref gamesLost);
-	}
-	else if(userInput == "2"){
-		ScoreBoard(gamesWon, gamesLost);
-	}
-
-
 
 }
 
@@ -113,26 +99,6 @@ static void CheckChoice(char[] displayWord, string word, ref int missed, ref str
         * and clear the console. 
         */
 
-	bool found = false;
-	guessed+= pickedLetter;
-
-	for(int i = 0; i < word.Length; i++){
-		if(word[i] == pickedLetter){
-			displayWord[i] = word[i];
-			found = true;
-		}
-	}
-	if(found == false){
-		missed++;
-		System.Console.WriteLine("LETTER " + pickedLetter + " WAS NOT FOUND");
-	}
-	
-	System.Console.WriteLine(displayWord);
-	System.Console.WriteLine("Press any key to continue.");
-	Console.ReadKey();
-	Console.Clear();
-
-
 }
 
 static bool KeepGoing(char[] displayWord, int missed){
@@ -140,21 +106,6 @@ static bool KeepGoing(char[] displayWord, int missed){
         * AND there are still underscores left meaning they have not 
         * fully guessed the word
         */
-
-	bool flag = false;
-
-	for(int i = 0; i < displayWord.Length; i++){
-		if(displayWord[i] == '_'){
-			flag = true;
-		}
-	}
-
-	if(missed < 7 && flag == true){
-		return true;
-	}
-
-	return false;
-
 
 }
 
@@ -176,20 +127,12 @@ static char[] SetDisplayWord(string word){
     /*SetDisplayWord to return a character array of 
     * underscores to match the word returned in step 3
     */
-	char[] NEWarray = new char[word.Length];
-	for(int i = 0; i < word.Length; i++){
-		NEWarray[i] = '_';
-	}
-	return NEWarray;
+
 }
 static string GetRandomWord(){
     // Selects a random word from the array below and returns it.
 
 
-    Random roll = new Random();
-    string[] snowmanWords = new string[] { "ROLLTIDE", "ALABAMA", "INNOVATE", "INFORMATION", "CAPSTONE", "SNOWMAN" };
-
-	return snowmanWords[roll.Next(0,5)];
 }
 
 
