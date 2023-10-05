@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\mis221-snowmanlab-chasecallahan37.csproj": {}
+    "/home/chase/projects/221/solutions/snowman-starter/mis221-snowmanlab-chasecallahan37.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\mis221-snowmanlab-chasecallahan37.csproj": {
+    "/home/chase/projects/221/solutions/snowman-starter/mis221-snowmanlab-chasecallahan37.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\mis221-snowmanlab-chasecallahan37.csproj",
+        "projectUniqueName": "/home/chase/projects/221/solutions/snowman-starter/mis221-snowmanlab-chasecallahan37.csproj",
         "projectName": "mis221-snowmanlab-chasecallahan37",
-        "projectPath": "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\mis221-snowmanlab-chasecallahan37.csproj",
-        "packagesPath": "C:\\Users\\Stanley Mk II\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\obj\\",
+        "projectPath": "/home/chase/projects/221/solutions/snowman-starter/mis221-snowmanlab-chasecallahan37.csproj",
+        "packagesPath": "/home/chase/.nuget/packages/",
+        "outputPath": "/home/chase/projects/221/solutions/snowman-starter/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Stanley Mk II\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/chase/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -48,12 +48,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.22, 6.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.22, 6.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.22, 6.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
         }
       }
     }

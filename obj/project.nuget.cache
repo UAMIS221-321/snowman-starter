@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pYWAmd7/LNJq6iqC/Zy48r12hV6k317/dn+ZDYvwi0lDSolHj/RT/N286Ni65y0gDKSAhyfedx0ddYHLex+kVw==",
+  "dgSpecHash": "Ehxxch7DlwaveX3f76H+YkalOfuVNi8WSAmfF1kqIoRgiw/NOaEqEnmhj2sRpeqULa5JOQoU96AyweYtGOkJkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stanley Mk II\\Desktop\\TA 221\\Fall 2023\\Repos\\snowmanLab\\mis221-snowmanlab-ChaseCallahan37\\mis221-snowmanlab-chasecallahan37.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/chase/projects/221/solutions/snowman-starter/mis221-snowmanlab-chasecallahan37.csproj",
+  "expectedPackageFiles": [
+    "/home/chase/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "/home/chase/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "/home/chase/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.22/microsoft.netcore.app.host.linux-x64.6.0.22.nupkg.sha512"
+  ],
   "logs": []
 }
