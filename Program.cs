@@ -2,7 +2,7 @@
 
 using System;
 
-//Start main 
+//***********Start main ***********
 
 int gamesWon = 0;
 int gamesLost = 0;
@@ -16,7 +16,7 @@ while (userInput != "3")
 
 Goodbye(gamesWon, gamesLost);
 
-// End main
+//************End main*************
 
 static string GetMenuChoice()
 {
@@ -67,7 +67,6 @@ static void SnowMan(ref int gamesWon, ref int gamesLost)
     char[] displayWord = SetDisplayWord(word);
     int missed = 0;
     string guessed = "";
-    char pickedLetter = '?';
 
     while (KeepGoing(displayWord, missed))
     {
@@ -75,13 +74,14 @@ static void SnowMan(ref int gamesWon, ref int gamesLost)
         Console.WriteLine();
         try
         {
-            pickedLetter = Console.ReadLine().ToUpper()[0];
+            char pickedLetter = Console.ReadLine().ToUpper()[0];
+            CheckChoice(displayWord, word, ref missed, ref guessed, pickedLetter);
         }
         catch
         {
-            pickedLetter = '?';
+            Console.WriteLine("Invalid input, please choose at least one character");
+            Pause();
         }
-        CheckChoice(displayWord, word, ref missed, ref guessed, pickedLetter);
     }
 
     if (missed == 7)
@@ -100,13 +100,14 @@ static void SnowMan(ref int gamesWon, ref int gamesLost)
 
 static void CheckChoice(char[] displayWord, string word, ref int missed, ref string guessed, char pickedLetter)
 {
-    /*Check choice should check to see if the letter picked is in the 
-        * word.  If it is, it should update the guessed array. and clear the 
-        * console.  If it is not, it should tell the user the letter was not 
-        * found, increase missed count, update the guessed letters array, 
-        * prompt user to press a key to continue, and clear the console. 
-        */
-
+    /*Check choice should check to see if the picked letter is in the word.
+    * If it is, then it should update displayWord to show that letter and clear the screen.
+    * If it isn't, then it should increased missed.
+    * If the pickedLetter is found to be in the guessed variable, then the user should be told that
+    *   that letter has already been guessed and nothing else should happen.
+    * If the pickedLetter is not found in the word, then the picked letter should be added to the guessed
+    *   variable and the other checks should continue on.
+    */
 }
 
 static bool KeepGoing(char[] displayWord, int missed)
@@ -136,7 +137,8 @@ static void ShowBoard(char[] displayWord, int missed, string guessed)
 static char[] SetDisplayWord(string word)
 {
     /*SetDisplayWord to return a character array of 
-    * underscores to match the word returned in step 3
+    * underscores, of the same length of the word
+    * passed into the method
     */
 
 }
@@ -172,4 +174,10 @@ static void Goodbye(int gamesWon, int gamesLost)
         " before you go");
     Console.ReadKey();
     ScoreBoard(gamesWon, gamesLost);
+}
+
+static void Pause(){
+    System.Console.WriteLine("\nPress any key to continue...");
+    Console.ReadKey();
+    Console.Clear();
 }
