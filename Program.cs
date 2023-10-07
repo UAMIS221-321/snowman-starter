@@ -154,6 +154,9 @@ static string GetRandomWord()
 static string[] GetWordList()
 {
     // Opens file where words are stored, puts them in an array, and returns array
+    // Assume there will never be more than 6 words
+    const int MAX_WORDS = 6;
+    string[] words = new string[MAX_WORDS];
 
 }
 
