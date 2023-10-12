@@ -110,19 +110,26 @@ static void CheckChoice(char[] displayWord, string word, ref int missed, ref str
     */
 
     // Check to see if letter has been guessed
-    if(LetterInWord(pickedLetter, guessed)){
+    if (LetterInWord(pickedLetter, guessed))
+    {
 
-    } else{
+    }
+    else
+    {
         // Check to see if letter is in word
-        if(LetterInWord(pickedLetter, word)){
+        if (LetterInWord(pickedLetter, word))
+        {
 
-        } else{
+        }
+        else
+        {
 
         }
     }
 }
 
-static bool LetterInWord(char letter, string word){
+static bool LetterInWord(char letter, string word)
+{
     // Checks to see if the letter is found anywhere in the word passed in
     // should return true or false
 }
@@ -196,7 +203,8 @@ static void Goodbye(int gamesWon, int gamesLost)
     ScoreBoard(gamesWon, gamesLost);
 }
 
-static void Pause(){
+static void Pause()
+{
     System.Console.WriteLine("\nPress any key to continue...");
     Console.ReadKey();
     Console.Clear();
