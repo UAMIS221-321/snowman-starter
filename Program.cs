@@ -108,6 +108,23 @@ static void CheckChoice(char[] displayWord, string word, ref int missed, ref str
     * If the pickedLetter is not found in the word, then the picked letter should be added to the guessed
     *   variable and the other checks should continue on.
     */
+
+    // Check to see if letter has been guessed
+    if(LetterInWord(pickedLetter, guessed)){
+
+    } else{
+        // Check to see if letter is in word
+        if(LetterInWord(pickedLetter, word)){
+
+        } else{
+
+        }
+    }
+}
+
+static bool LetterInWord(char letter, string word){
+    // Checks to see if the letter is found anywhere in the word passed in
+    // should return true or false
 }
 
 static bool KeepGoing(char[] displayWord, int missed)
